@@ -1,0 +1,43 @@
+import { Component, inject } from '@angular/core';
+import { DataService } from '../data-service';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-home',
+  imports: [],
+  templateUrl: './home.html',
+  styleUrl: './home.css',
+})
+export class Home {
+  route=inject(Router);
+  constructor(private DataService: DataService) {}
+  
+  cartItems(item:string, price:number){
+    alert(item + " added to cart");
+      this.DataService.addToCart(item, price);
+    }
+   
+  homeView(){
+    this.route.navigateByUrl('/home');
+  }
+
+  cartView(){
+    this.route.navigateByUrl('/cart');
+  }
+
+  viewMenu(){
+    this.route.navigateByUrl('/menu');
+  } 
+  scrollTo(element: HTMLElement) {
+    element.scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+    
+ 
+  }
+  
+  
+  
+
+

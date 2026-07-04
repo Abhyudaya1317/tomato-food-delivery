@@ -1,0 +1,23 @@
+<table class="task-table">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    @for (item of DataService.cartList; track $index) {
+      <tr>
+        <td>{{ item.product }}</td>
+        <td>{{ item.mrp }}</td>
+        <td><button class="tick-btn" (click)="deleteItem($index)">X</button></td>
+      </tr>
+    }
+
+    
+    <button class="checkout-btn" (click)="checkout()">Checkout</button>
+  </tbody>
+</table>

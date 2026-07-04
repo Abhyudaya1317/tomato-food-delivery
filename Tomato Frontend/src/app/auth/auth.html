@@ -1,0 +1,43 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="auth-brand">
+      <div class="brand-badge">T</div>
+      <div>
+        <h2>Tomato</h2>
+        <p>Deliver fresh meals to your door</p>
+      </div>
+    </div>
+
+    <div class="auth-header">
+      <h1>Welcome back</h1>
+      <p>Login with your email and password to continue.</p>
+    </div>
+
+    <form class="auth-form">
+      <label>
+        <span>Email</span>
+        <input name="email" [(ngModel)]="loginObj.email" placeholder="you@example.com"s required />
+      </label>
+
+      <label>
+        <span>Password</span>
+        <input name="password" [(ngModel)]="loginObj.password" placeholder="Enter your password" required />
+      </label>
+
+      <div class="auth-actions">
+        <label class="remember-me">
+          <input type="checkbox" />
+          Remember me
+        </label>
+        <a href="#" class="forgot-link">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="submit-btn" (click)="onLogin()">Log In</button>
+    </form>
+
+    <div class="auth-footer">
+      <span>New to Tomato?</span>
+      <a href="#">Create an account</a>
+    </div>
+  </div>
+</div>

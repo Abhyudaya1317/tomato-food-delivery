@@ -1,0 +1,240 @@
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <div (click)="homeView()" class="logo"><h2>Tomato.</h2></div>
+
+    <div class="nav-links">
+        <a (click)="homeView()">Home</a>
+        <a (click)="scrollTo(Menu)">Menu</a>
+        <a (click)="scrollTo(offers)">Offers</a>
+        <a >Contact</a>
+        <a  (click)="cartView()">Cart</a>
+    </div>
+
+    <div class="nav-actions">
+        <input type="text" placeholder="Search food...">
+    </div>
+    <button ></button>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>Order Your Favourite Food</h1>
+        <p>Discover the best restaurants and delicious meals delivered to your doorstep.</p>
+        <button (click)="viewMenu()">Explore Menu</button>
+    </div>
+
+    <div class="hero-image">
+        <img src="/images/hero.jpg" alt="Food delivery hero image">
+    </div>
+</section>
+
+<!-- ================= CATEGORIES ================= -->
+<section class="categories">
+    <h2>Explore Menu</h2>
+
+    <div class="category-scroll">
+        <div class="category-card"><img src="/images/pizza.jpg" alt="Pizza"><p>Pizza</p></div>
+        <div class="category-card"><img src="/images/burger.jpg" alt="Burger"><p>Burger</p></div>
+        <div class="category-card"><img src="/images/pasta.jpg" alt="Pasta"><p>Pasta</p></div>
+        <div class="category-card"><img src="/images/noodles.jpg" alt="Noodles"><p>Noodles</p></div>
+        <div class="category-card"><img src="/images/desert.jpg" alt="Desserts"><p>Desserts</p></div>
+        <div class="category-card"><img src="/images/drinks.jpg" alt="Drinks"><p>Drinks</p></div>
+        <div class="category-card"><img src="/images/iceCream.jpg" alt="Ice Cream"><p>Ice Cream</p></div>
+    </div>
+</section>
+
+<!-- ================= TOP DISHES ================= -->
+<section class="top-dishes">
+    <h2>Top Dishes Near You</h2>
+
+    <div class="dish-scroll">
+        <div class="dish-card">
+            <img src="/images/pizza.jpg" alt="Cheese Pizza">
+            <h3>Cheese Pizza</h3>
+            <p>$12</p>
+            <button (click)="cartItems('Cheese Pizza', 12)">Add to Cart</button>
+        </div>
+
+        <div class="dish-card">
+            <img src="/images/burger.jpg" alt="Veg Burger">
+            <h3>Veg Burger</h3>
+            <p>$8</p>
+            <button (click)="cartItems('Veg Burger', 8)">Add to Cart</button>
+        </div>
+
+        <div class="dish-card">
+            <img src="/images/pasta.jpg" alt="White Pasta">
+            <h3>White Pasta</h3>
+            <p>$11</p>
+            <button (click)="cartItems('White Pasta', 11)">Add to Cart</button>
+        </div>
+
+        <div class="dish-card">
+            <img src="/images/momos.jpg" alt="Chicken Momos">
+            <h3>Chicken Momos</h3>
+            <p>$7</p>
+            <button (click)="cartItems('Chicken Momos', 7)">Add to Cart</button>
+        </div>
+
+        <div class="dish-card">
+            <img src="/images/chocolatecake.jpg" alt="Chocolate Cake"> 
+            <h3>Chocolate Cake</h3>
+            <p>$9</p>
+            <button (click)="cartItems('Chocolate Cake', 9)">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+    <!-- ================= RESTAURANTS ================= -->
+
+<section class="restaurants" #Menu>
+    <h2>Restaurants Near You</h2>
+
+    <div class="restaurant-grid">
+        <div class="restaurant-card">
+            <img src="/images/pizza-palace.jpg" alt="Pizza Palace">
+            <h3>Pizza Palace</h3>
+            <p>⭐ 4.5 • 25 mins</p>
+            <button (click)="viewMenu()">View Menu</button>
+        </div>
+
+        <div class="restaurant-card">
+            <img src="/images/burger-house.jpg" alt="Burger House">
+            <h3>Burger House</h3>
+            <p>⭐ 4.3 • 20 mins</p>
+            <button (click)="viewMenu()">View Menu</button>
+        </div>
+
+        <div class="restaurant-card">
+            <img src="/images/pasta-point.jpg" alt="Pasta Point">
+            <h3>Pasta Point</h3>
+            <p>⭐ 4.7 • 30 mins</p>
+            <button (click)="viewMenu()">View Menu</button>
+        </div>
+
+        <div class="restaurant-card">
+            <img src="/images/spice-hub.jpg" alt="Spice Hub">
+            <h3>Spice Hub</h3>
+            <p>⭐ 4.4 • 18 mins</p>
+            <button (click)="viewMenu()">View Menu</button>
+        </div>
+    </div>
+</section>
+
+<!-- ================= OFFERS ================= -->
+
+<section class="offers" #offers>
+    <h2>Today's Offers</h2>
+
+    <div class="offer-container">
+        <div class="offer-card">
+            <h3>50% OFF</h3>
+            <p>On your first order</p>
+        </div>
+
+        <div class="offer-card">
+            <h3>Free Delivery</h3>
+            <p>Orders above ₹299</p>
+        </div>
+
+        <div class="offer-card">
+            <h3>Buy 1 Get 1</h3>
+            <p>Selected restaurants</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= POPULAR BRANDS ================= -->
+
+<section class="brands">
+    <h2>Popular Brands</h2>
+
+    <div class="brand-scroll">
+        <div class="brand-card"><img src="/images/kfc.jpg" alt="KFC"><p>KFC</p></div>
+        <div class="brand-card"><img src="/images/mcdonald.jpg" alt="McDonald's"><p>McDonald's</p></div>
+        <div class="brand-card"><img src="/images/domino.jpg" alt="Domino's"><p>Domino's</p></div>
+        <div class="brand-card"><img src="/images/pizzahut.jpg" alt="Pizza Hut"><p>Pizza Hut</p></div>
+        <div class="brand-card"><img src="/images/starbucks.jpg" alt="Starbucks"><p>Starbucks</p></div>
+        <div class="brand-card"><img src="/images/subway.jpg" alt="Subway"><p>Subway</p></div>
+    </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+    <h2>Why Choose Tomato?</h2>
+
+    <div class="feature-container">
+        <div class="feature-card">
+            <h3>🚚 Fast Delivery</h3>
+            <p>Fresh food delivered in minutes.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🍽️ 1000+ Restaurants</h3>
+            <p>Explore cuisines from everywhere.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>💳 Secure Payments</h3>
+            <p>Pay safely using multiple methods.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>⭐ Best Quality</h3>
+            <p>Only highly rated restaurants.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= DOWNLOAD APP ================= -->
+
+<section class="download-app">
+    <div class="download-text">
+        <h2>Get the Tomato App</h2>
+        <p>Order food anytime, anywhere with our mobile app.</p>
+
+        <div class="download-buttons">
+            <button onclick="window.open('https://play.google.com/store/search?q=zomato&c=apps&hl=en')"   >Google Play</button>
+            <button onclick="window.open('https://apps.apple.com/in/app/zomato-food-delivery-dining/id434613896')"   >App Store</button>
+        </div>
+    </div>
+
+    <div class="download-image">
+        <img src="images/tomato.jpg">
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+    <div class="footer-logo">
+        <h2>Tomato.</h2>
+        <p>Delivering happiness to your doorstep.</p>
+    </div>
+
+    <div class="footer-links">
+        <h3>Company</h3>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+    </div>
+
+    <div class="footer-links">
+        <h3>Support</h3>
+        <a href="#">Help Center</a>
+        <a href="#">Terms</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">FAQs</a>
+    </div>
+
+    <div class="footer-links">
+        <h3>Follow Us</h3>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">YouTube</a>
+    </div>
+</footer>
