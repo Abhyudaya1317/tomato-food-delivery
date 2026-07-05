@@ -19,10 +19,10 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 
-//API Routes
+//API Routesc
 app.use("/auth",authRoutes);
 app.get("/hello", (req,res)=>{
-    res.json({message: "Hello World"});
+    res.json({message: "Hello Word"});
 });
 
 

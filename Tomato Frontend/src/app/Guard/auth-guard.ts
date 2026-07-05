@@ -13,3 +13,6 @@ export const authGuard: CanActivateFn = (route, state) => {
   }
   
 };
+
+//TO DO TBD
+//delete nai hora
