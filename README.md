@@ -44,6 +44,7 @@ A full-stack food delivery web application inspired by platforms like Zomato and
 - GitHub
 - VS Code
 - Postman
+- MongoDB Atlas
 
 ---
 ## ⚙️ Backend Highlights
