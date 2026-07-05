@@ -1,6 +1,6 @@
 import User from "../model/userModel.js";
 import bcrypt from "bcryptjs";
-import generateToken from "../utils/generateToken.js";
+import generateToken from "../routes/utils/generateToken.js";
 
 //REGISTER
 
