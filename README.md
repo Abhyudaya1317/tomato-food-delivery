@@ -14,7 +14,7 @@ A full-stack food delivery web application inspired by platforms like Zomato and
 - Protected Routes
 - JWT Authentication
 - Middlewares
-- Zod Validitation for data
+- Zod Validation for data
 
 ### 🛒 Shopping Cart
 - Add items to cart
@@ -105,6 +105,7 @@ While building this project I learned:
 - Building REST APIs with Express.js
 - MongoDB data modeling using Mongoose
 - JWT Authentication
+- Middlewares and Zod authentication 
 - Angular routing and components
 - Client-Server communication
 - Git & GitHub workflow
