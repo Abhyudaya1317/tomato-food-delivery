@@ -5,7 +5,7 @@ import generateToken from "../routes/utils/generateToken.js";
 //REGISTER
 
 const register = async (req, res) => {
-    const {name, email, password, phone} = req.body;
+    const {name, email, password} = req.body;
 
     // Check if user already exists
     const userExists= await User.findOne({email})
@@ -22,8 +22,7 @@ const register = async (req, res) => {
     const safeUser= await User.create({    
         name,
         email,
-        password: hashedPassword,
-        phone
+        password: hashedPassword
         });
 
     
@@ -36,8 +35,7 @@ const register = async (req, res) => {
             user_info:{
                 id:safeUser._id,
                 name,
-                email,
-                phone
+                email
         }, token
     }); 
 };

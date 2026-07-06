@@ -22,92 +22,77 @@ const seedUsers = async () => {
             {
                 name: "Arjun Mehta",
                 email: "arjun.mehta@gmail.com",
-                password: hashedPassword,
-                phone: "9876500001",
+                password: hashedPassword
             },
             {
                 name: "Riya Sharma",
                 email: "riya.sharma@gmail.com",
-                password: hashedPassword,
-                phone: "9876500002",
+                password: hashedPassword
             },
             {
                 name: "Kabir Verma",
                 email: "kabir.verma@gmail.com",
-                password: hashedPassword,
-                phone: "9876500003",
+                password: hashedPassword
             },
             {
                 name: "Sneha Kapoor",
                 email: "sneha.kapoor@gmail.com",
-                password: hashedPassword,
-                phone: "9876500004",
+                password: hashedPassword
             },
             {
                 name: "Vivaan Singh",
                 email: "vivaan.singh@gmail.com",
-                password: hashedPassword,
-                phone: "9876500005",
+                password: hashedPassword
             },
             {
                 name: "Ananya Gupta",
                 email: "ananya.gupta@gmail.com",
-                password: hashedPassword,
-                phone: "9876500006",
+                password: hashedPassword
             },
             {
                 name: "Karan Malhotra",
                 email: "karan.malhotra@gmail.com",
-                password: hashedPassword,
-                phone: "9876500007",
+                password: hashedPassword
             },
             {
                 name: "Ishita Jain",
                 email: "ishita.jain@gmail.com",
-                password: hashedPassword,
-                phone: "9876500008",
+                password: hashedPassword
             },
             {
                 name: "Aarav Bansal",
                 email: "aarav.bansal@gmail.com",
-                password: hashedPassword,
-                phone: "9876500009",
+                password: hashedPassword
             },
             {
                 name: "Meera Nair",
                 email: "meera.nair@gmail.com",
-                password: hashedPassword,
-                phone: "9876500010",
+                password: hashedPassword
             },
             {
                 name: "Dev Patel",
                 email: "dev.patel@gmail.com",
-                password: hashedPassword,
-                phone: "9876500011",
+                password: hashedPassword
             },
             {
                 name: "Priya Chawla",
                 email: "priya.chawla@gmail.com",
-                password: hashedPassword,
-                phone: "9876500012",
+                password: hashedPassword
             },
             {
                 name: "Yash Khanna",
                 email: "yash.khanna@gmail.com",
-                password: hashedPassword,
-                phone: "9876500013",
+                password: hashedPassword
             },
             {
                 name: "Neha Sethi",
                 email: "neha.sethi@gmail.com",
-                password: hashedPassword,
-                phone: "9876500014",
+                password: hashedPassword
             },
             {
                 name: "Rohan Desai",
                 email: "rohan.desai@gmail.com",
-                password: hashedPassword,
-                phone: "9876500015",
+                password: hashedPassword
             },
         ]);
 
