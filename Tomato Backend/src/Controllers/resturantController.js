@@ -4,13 +4,10 @@ import Resturant from "../model/resturantModel.js";
 const add = async (req, res) => {
     const {
         name,
-        description,
         image,
-        ownerName,
         email,
-        phone,
         address,
-        cuisine,
+        cuisine
     } = req.body;
 
     // Check if restaurant already exists
@@ -25,24 +22,21 @@ const add = async (req, res) => {
     // Create new restaurant
     const newResturant = await Resturant.create({
         name,
-        description,
         image,
-        ownerName,
         owner: req.user._id,
         email,
-        phone,
         address,
-        cuisine,
+        cuisine
     });
 
     res.status(201).json({
         status: "success",
         restaurant_info: {
             id: newResturant._id,
-            name: newResturant.name,
-            owner: newResturant.owner,
-            email: newResturant.email,
-            address: newResturant.address,
+            name,
+            owner: req.user._id,
+            email,
+            address,
         },
     });
 };

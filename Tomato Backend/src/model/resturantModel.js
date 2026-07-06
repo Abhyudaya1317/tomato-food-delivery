@@ -8,24 +8,14 @@ const restaurantSchema = new mongoose.Schema(
       trim: true,
     },
 
-    description: {
-      type: String,
-      required: true,
-    },
-
     image: {
-      type: String,
-      required: true,
+      type: String
     },
 
-    ownerName: {
-      type: String,
-      required: true,
-    },
     owner: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-    required: true,
+    ref: "User"
+    // required: true,
     },
 
     email: {
@@ -34,14 +24,10 @@ const restaurantSchema = new mongoose.Schema(
       unique: true,
     },
 
-    phone: {
-      type: String,
-      required: true,
-    },
-
     address: {
       type: String,
       required: true,
+      trim: true,
     },
 
     cuisine: {
@@ -61,12 +47,8 @@ const restaurantSchema = new mongoose.Schema(
     rating: {
       type: Number,
       default: 0,
-    },
+    }
 
-    isOpen: {
-      type: Boolean,
-      default: true,
-    },
   },
   {
     timestamps: true,
