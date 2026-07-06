@@ -13,6 +13,8 @@ A full-stack food delivery web application inspired by platforms like Zomato and
 - Secure Login
 - Protected Routes
 - JWT Authentication
+- Middlewares
+- Zod Validitation for data
 
 ### 🛒 Shopping Cart
 - Add items to cart
@@ -38,6 +40,8 @@ A full-stack food delivery web application inspired by platforms like Zomato and
 - MongoDB
 - Mongoose
 - JWT Authentication
+- Middlewares
+- Validitation using Zod
 
 ### Tools
 - Git
