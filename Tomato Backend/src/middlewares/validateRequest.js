@@ -5,7 +5,7 @@ export const validateRequest = (schema) => {
         if(!result.success){
             res.status(200).json({
                 status : "error", 
-                error: result.error.errors.map((err) => err.message)});
+                errors: result.error.issues.map(issue => issue.message)});
         }
 
         req.body=result.data; //body gets Sanitized/validated data

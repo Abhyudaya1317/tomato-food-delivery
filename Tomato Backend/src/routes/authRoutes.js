@@ -5,7 +5,7 @@ import { deleteUser } from "../Controllers/deleteController.js";
 
 import { authMiddleware } from "../middlewares/authMiddleware.js";
 import { validateRequest } from "../middlewares/validateRequest.js";
-
+import { registerSchema, loginSchema } from "../validators/authValidators.js";
 const router = express.Router();
 
 // router.use(authMiddleware);
