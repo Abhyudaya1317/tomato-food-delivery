@@ -3,7 +3,6 @@ import bcrypt from "bcryptjs";
 import generateToken from "../routes/utils/generateToken.js";
 
 //REGISTER
-
 const register = async (req, res) => {
     const {name, email, password} = req.body;
 
