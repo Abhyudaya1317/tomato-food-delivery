@@ -2,6 +2,27 @@ import User from "../model/userModel.js";
 import bcrypt from "bcryptjs";
 import generateToken from "../routes/utils/generateToken.js";
 
+// GET USER PROFILE
+const getProfile = async (req, res) => {
+    const user = req.user;
+
+    res.status(200).json({
+        status: "success",
+        user_info: {
+            id: user._id,
+            name: user.name,
+            email: user.email,
+            phone: user.phone,
+            profileImage: user.profileImage,
+        },
+    });
+};
+
+
+
+
+
+
 //REGISTER
 const register = async (req, res) => {
     const {name, email, password} = req.body;
@@ -73,7 +94,6 @@ res.status(200).json({
 
 };
 
-
 //LOGOUT
 const logout= async (req,res) => {
     res.cookie("jwt","",{
@@ -87,4 +107,42 @@ const logout= async (req,res) => {
     })
 }
 
-export { register, login, logout };
+
+
+
+
+// UPDATE USER PROFILE
+const updateProfile = async (req, res) => {
+    const { name, phone, profileImage } = req.body;
+
+    const user = await User.findById(req.user._id);
+
+    if (!user) {
+        return res.status(404).json({
+            error: "User not found",
+        });
+    }
+
+    user.name = name || user.name;
+    user.phone = phone || user.phone;
+    user.profileImage = profileImage || user.profileImage;
+
+    const updatedUser = await user.save();
+
+    res.status(200).json({
+        status: "success",
+        message: "Profile updated successfully",
+        user_info: {
+            id: updatedUser._id,
+            name: updatedUser.name,
+            email: updatedUser.email,
+            phone: updatedUser.phone,
+            profileImage: updatedUser.profileImage,
+        },
+    });
+};
+
+
+
+
+export { getProfile, register, login, logout, updateProfile };
