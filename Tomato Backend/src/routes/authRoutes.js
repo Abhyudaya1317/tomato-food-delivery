@@ -8,15 +8,15 @@ import { validateRequest } from "../middlewares/validateRequest.js";
 import { registerSchema, loginSchema } from "../validators/authValidators.js";
 const router = express.Router();
 
-router.get("/view", getProfile);
+router.get("/view",authMiddleware, getProfile);
 
 router.post("/register",validateRequest(registerSchema), register);
 
-router.post("/login",validateRequest(loginSchema), authMiddleware, login);
+router.post("/login",validateRequest(loginSchema), login);
 
-router.post("/logout", logout);
+router.post("/logout",authMiddleware, logout);
 
-router.patch("/update",updateProfile)
+router.put("/update",authMiddleware,updateProfile)
 
 router.delete("/:id", authMiddleware, deleteUser);
 

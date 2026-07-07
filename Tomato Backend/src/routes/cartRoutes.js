@@ -13,7 +13,7 @@ router.get("/get",getCart);
 
 router.post("/add",validateRequest(addToCartSchema), addToCart);
 
-router.patch("/update",validateRequest(updateSchema),updateQuantity);
+router.put("/update",validateRequest(updateSchema),updateQuantity);
 
 router.delete("/:id",removeFromCart);
 

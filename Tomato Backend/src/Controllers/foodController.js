@@ -1,6 +1,24 @@
 import Food from "../model/foodModel.js";
 import Restaurant from "../model/resturantModel.js";
 
+
+
+const getFoods = async (req, res) => {
+    const foods = await Food.find()
+        .populate("restaurant", "name image");
+
+    res.status(200).json({
+        status: "success",
+        totalFoods: foods.length,
+        foods,
+    });
+};
+
+
+
+
+
+
 const addfood =async (req,res) => {
     const {name,price,image,category,isVeg} =req.body;
 
@@ -51,6 +69,56 @@ const addfood =async (req,res) => {
 }
 
 
+
+
+
+
+
+// UPDATE FOOD
+const updateFood = async (req, res) => {
+    const { name, price, image, category, isVeg } = req.body;
+
+    // Find the food
+    const food = await Food.findById(req.params.id);
+
+    if (!food) {
+        return res.status(404).json({
+            error: "Food not found",
+        });
+    }
+
+    // Find restaurant that owns this food
+    const restaurant = await Restaurant.findById(food.restaurant);
+
+    // Authorization check
+    if (!restaurant.owner.equals(req.user._id)) {
+        return res.status(403).json({
+            error: "You are not authorized to update this food",
+        });
+    }
+
+    // Update fields
+    food.name = name || food.name;
+    food.price = price || food.price;
+    food.image = image || food.image;
+    food.category = category || food.category;
+
+    if (typeof isVeg === "boolean") {
+        food.isVeg = isVeg;
+    }
+
+    const updatedFood = await food.save();
+
+    res.status(200).json({
+        status: "success",
+        message: "Food updated successfully",
+        food: updatedFood,
+    });
+};
+
+
+
+
 // DELETE FOOD
 const deletefood = async (req, res) => {
     // Find food
@@ -80,4 +148,4 @@ const deletefood = async (req, res) => {
     });
 };
 
-export {addfood, deletefood};
+export {getFoods, addfood,updateFood, deletefood};

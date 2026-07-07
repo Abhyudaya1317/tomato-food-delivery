@@ -1,5 +1,5 @@
 import express from "express";
-import { addfood,deletefood } from "../Controllers/foodController.js";
+import {getFoods, addfood,updateFood, deletefood} from "../Controllers/foodController.js";
 import { authMiddleware } from "../middlewares/authMiddleware.js";
 import { validateRequest } from "../middlewares/validateRequest.js";
 import { foodSchema } from "../validators/foodValidators.js";
@@ -7,10 +7,12 @@ import { foodSchema } from "../validators/foodValidators.js";
 
 const router=express.Router();
 
-router.use(authMiddleware);
+router.get("/view",getFoods);
 
-router.post("/add",validateRequest(foodSchema), addfood);
+router.post("/add",validateRequest(foodSchema),authMiddleware, addfood);
 
-router.delete("/:id", deletefood)
+router.put("/update",authMiddleware, updateFood);
+
+router.delete("/:id",authMiddleware, deletefood);
 
 export default router;

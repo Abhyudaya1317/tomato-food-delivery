@@ -1,5 +1,29 @@
 import Resturant from "../model/resturantModel.js";
 
+// GET RESTAURANT
+const getRestaurant = async (req, res) => {
+    const restaurant = await Restaurant.findOne({
+        owner: req.user._id,
+    });
+
+    if (!restaurant) {
+        return res.status(404).json({
+            error: "Restaurant not found",
+        });
+    }
+
+    res.status(200).json({
+        status: "success",
+        restaurant,
+    });
+};
+
+
+
+
+
+
+
 // ADD RESTAURANT
 const add = async (req, res) => {
     const {
@@ -41,6 +65,49 @@ const add = async (req, res) => {
     });
 };
 
+
+
+
+
+// UPDATE RESTAURANT
+const updateRestaurant = async (req, res) => {
+    const {
+        name,
+        image,
+        email,
+        address,
+        cuisine,
+    } = req.body;
+
+    const restaurant = await Restaurant.findOne({
+        owner: req.user._id,
+    });
+
+    if (!restaurant) {
+        return res.status(404).json({
+            error: "Restaurant not found",
+        });
+    }
+
+    restaurant.name = name || restaurant.name;
+    restaurant.image = image || restaurant.image;
+    restaurant.email = email || restaurant.email;
+    restaurant.address = address || restaurant.address;
+    restaurant.cuisine = cuisine || restaurant.cuisine;
+
+    const updatedRestaurant = await restaurant.save();
+
+    res.status(200).json({
+        status: "success",
+        message: "Restaurant updated successfully",
+        restaurant: updatedRestaurant,
+    });
+};
+
+
+
+
+
 // DELETE RESTAURANT
 const deleteResturant = async (req, res) => {
     // Find restaurant
@@ -68,4 +135,4 @@ const deleteResturant = async (req, res) => {
     });
 };
 
-export { add, deleteResturant };
+export { getRestaurant, add,updateRestaurant, deleteResturant };
