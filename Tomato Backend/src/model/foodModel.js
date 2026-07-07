@@ -4,8 +4,7 @@ const foodSchema = new mongoose.Schema(
   {
     restaurant: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Restaurant",
-      required: true,
+      ref: "Restaurant"
     },
 
     name: {
@@ -42,10 +41,6 @@ const foodSchema = new mongoose.Schema(
       default: true,
     },
 
-    isAvailable: {
-      type: Boolean,
-      default: true,
-    },
   },
   {
     timestamps: true,
