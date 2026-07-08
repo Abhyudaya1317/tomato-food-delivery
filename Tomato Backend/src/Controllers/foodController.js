@@ -1,5 +1,5 @@
 import Food from "../model/foodModel.js";
-import Restaurant from "../model/resturantModel.js";
+import Restaurant from "../model/restaurantModel.js"
 
 
 

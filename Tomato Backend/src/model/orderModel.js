@@ -1,43 +1,31 @@
 import mongoose from "mongoose";
 
-const orderSchema = new mongoose.Schema(
-  {
+const orderSchema = new mongoose.Schema({
     user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
     },
 
-    restaurant: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Restaurant",
-      required: true,
-    },
-
-    items: [
-      {
-        food: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Food",
-          required: true,
-        },
-
-        quantity: {
-          type: Number,
-          required: true,
-          min: 1,
-        },
-      },
-    ],
-
-    totalAmount: {
-      type: Number,
-      required: true,
+    cart: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Cart",
+        required: true,
     },
 
     deliveryAddress: {
       type: String,
       required: true,
+      trim: true,
+    },
+
+    phone: {
+      type: String,
+      required: true,
+    },
+
+    customerName: {
+    type: String,
+    required: true,
     },
 
     paymentMethod: {
@@ -47,28 +35,23 @@ const orderSchema = new mongoose.Schema(
     },
 
     paymentStatus: {
-      type: String,
-      enum: ["Pending", "Paid"],
-      default: "Pending",
+        type: String,
+        enum: ["Pending", "Paid"],
+        default: "Pending",
     },
 
     orderStatus: {
-      type: String,
-      enum: [
-        "Placed",
-        "Preparing",
-        "Out for Delivery",
-        "Delivered",
-        "Cancelled",
-      ],
-      default: "Placed",
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
-
-const Order = mongoose.model("Order", orderSchema);
+        type: String,
+        enum: [
+            "Placed",
+            "Preparing",
+            "Out for Delivery",
+            "Delivered",
+            "Cancelled",
+        ],
+        default: "Placed",
+    }
+});
+export const Order = mongoose.model("Order", orderSchema);
 
 export default Order;

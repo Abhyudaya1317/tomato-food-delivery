@@ -7,8 +7,9 @@ import { disconnect } from "cluster";
 
 import authRoutes from "./routes/authRoutes.js";
 import foodRoutes from "./routes/foodRoutes.js";
-import resturantRoutes from "./routes/resturantRoutes.js";
-import cartRoutes from "./routes/cartRoutes.js"
+import restaurantRoutes from "./routes/restaurantRoutes.js";
+import cartRoutes from "./routes/cartRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
 
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
 dotenv.config();
@@ -24,9 +25,10 @@ app.use(express.urlencoded({extended:true}));
 
 //API Routes
 app.use("/auth",authRoutes);
-app.use("/resturant", resturantRoutes);
+app.use("/resturant", restaurantRoutes);
 app.use("/food",foodRoutes);
 app.use("/cart",cartRoutes);
+app.use("/order",orderRoutes);
 
 
 const PORT=5003;

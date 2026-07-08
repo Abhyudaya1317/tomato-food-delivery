@@ -1,5 +1,5 @@
 import express from "express";
-import { getRestaurant, add,updateRestaurant, deleteResturant } from "../Controllers/resturantController.js";
+import { getRestaurant, add,updateRestaurant, deleteResturant } from "../Controllers/restaurantController.js";
 import { authMiddleware } from "../middlewares/authMiddleware.js";
 import { validateRequest } from "../middlewares/validateRequest.js";
 import { restaurantSchema } from "../validators/resturantValidators.js";
