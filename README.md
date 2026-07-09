@@ -76,7 +76,8 @@ tomato-food-delivery/
 │   │   ├── Routes/
 │   │   ├── Models/
 │   │   ├── Config/
-│   │   └── server.js
+|   |   ├── Validators/
+│   │   └── server.js   
 │   └── package.json
 │
 └── README.md
