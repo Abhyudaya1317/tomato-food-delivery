@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { DataService } from '../data-service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -35,6 +36,7 @@ export class Home {
 }
     
  
+  http=inject(HttpClient)
   }
   
   

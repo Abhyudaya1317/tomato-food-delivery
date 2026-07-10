@@ -11,6 +11,10 @@ import restaurantRoutes from "./routes/restaurantRoutes.js";
 import cartRoutes from "./routes/cartRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 
+import cors from "cors";
+
+
+
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
 dotenv.config();
 
@@ -22,6 +26,9 @@ connectDB();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
+app.use(cors({
+    origin: "http://localhost:4200"
+}));
 
 //API Routes
 app.use("/auth",authRoutes);
