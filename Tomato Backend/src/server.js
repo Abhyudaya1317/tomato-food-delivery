@@ -23,12 +23,15 @@ const app=express();
 // Connect to MongoDB
 connectDB();
 
-app.use(express.json());
-app.use(express.urlencoded({extended:true}));
 
 app.use(cors({
     origin: "http://localhost:4200"
 }));
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
+
 
 //API Routes
 app.use("/auth",authRoutes);

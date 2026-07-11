@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { Api } from '../../services/api';
 import { DataService } from '../data-service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -11,11 +12,21 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Home {
   route=inject(Router);
-  constructor(private DataService: DataService) {}
+
+  constructor(private api: Api){}
+  ngOnInit(){
+
+  this.api.getFood().subscribe((data)=>{
+  console.log(data);
+  
+  });
+
+}
+  // constructor(private DataService: DataService) {}
   
   cartItems(item:string, price:number){
     alert(item + " added to cart");
-      this.DataService.addToCart(item, price);
+      // this.DataService.addToCart(item, price);
     }
    
   homeView(){
