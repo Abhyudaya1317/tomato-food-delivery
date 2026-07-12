@@ -24,7 +24,6 @@ A full-stack food delivery web application inspired by platforms like Zomato and
 - Browse restaurants
 - Browse food items
 
-
 ---
 ## 🛠️ Tech Stack
 
