@@ -23,7 +23,7 @@ A full-stack food delivery web application inspired by platforms like Zomato and
 ### 🍽️ Food Discovery
 - Browse restaurants
 - Browse food items
-
+  
 ---
 ## 🛠️ Tech Stack
 
@@ -97,7 +97,6 @@ tomato-food-delivery/
 - [ ] Deployment
 
 ---
-
 ## 📖 What I Learned
 
 While building this project I learned:
