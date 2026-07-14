@@ -3,7 +3,6 @@
 A full-stack food delivery web application inspired by platforms like Zomato and Swiggy. Users can browse restaurants, explore menus, add food to their cart, authenticate securely, and place orders through a modern and responsive interface.
 
 > 🚧 This project is currently under active development.
-
 ---
 
 ## ✨ Features
