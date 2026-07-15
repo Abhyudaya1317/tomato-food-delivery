@@ -4,7 +4,6 @@ A full-stack food delivery web application inspired by platforms like Zomato and
 
 > 🚧 This project is currently under active development.
 ---
-
 ## ✨ Features
 
 ### 👤 User Authentication
