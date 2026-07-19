@@ -12,14 +12,27 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Home {
   route=inject(Router);
+  http=inject(HttpClient)
 
   constructor(private api: Api){}
+
+  foods: any[]=[];
+  restaurants: any[] = [];
+
   ngOnInit(){
+
 
   this.api.getFood().subscribe((data)=>{
   console.log(data);
-  
   });
+
+
+
+  this.api.getResturant().subscribe((data)=>{
+  console.log(data);
+  // this.restaurants=data
+  });
+
 
 }
   // constructor(private DataService: DataService) {}
@@ -29,17 +42,20 @@ export class Home {
       // this.DataService.addToCart(item, price);
     }
    
+
+  //Navigating 
   homeView(){
     this.route.navigateByUrl('/home');
   }
-
   cartView(){
     this.route.navigateByUrl('/cart');
   }
-
   viewMenu(){
     this.route.navigateByUrl('/menu');
   } 
+
+
+
   scrollTo(element: HTMLElement) {
     element.scrollIntoView({
         behavior: 'smooth'
@@ -47,7 +63,7 @@ export class Home {
 }
     
  
-  http=inject(HttpClient)
+
   }
   
   
