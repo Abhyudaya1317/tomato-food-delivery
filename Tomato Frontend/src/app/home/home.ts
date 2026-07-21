@@ -28,10 +28,13 @@ export class Home {
 
 
 
-  this.api.getResturant().subscribe((data)=>{
+  this.api.getResturant().subscribe((data: any) => {
   console.log(data);
-  // this.restaurants=data
   });
+  // this.api.getResturant().subscribe((data)=>{
+  // console.log(data);
+  // this.restaurants=data
+  // });
 
 
 }

@@ -1,4 +1,4 @@
-import Resturant from "../model/restaurantModel.js";
+import Restaurant from "../model/restaurantModel.js";
 
 // GET RESTAURANT
 const getRestaurant = async (req, res) => {
